@@ -27,7 +27,8 @@ if( isset( $_POST[ 'Submit' ]  ) ) {
 	}
 	else {
 		// *nix
-		$cmd = shell_exec( 'ping  -c 3 ' . $target );
+		$newTarget = escapeshellcmd($target);
+		$cmd = shell_exec( 'ping  -c 3 ' . $newTarget );
 	}
 
 	// Feedback for the end user
