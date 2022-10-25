@@ -1,5 +1,8 @@
 <?php
 
+$apiKey = "82d854a0ba72efb8e1a4611d0ec2358b";
+$apiKey2 = "32d854a0ba72efb8e1a4611d0ec2358b";
+
 if( isset( $_POST[ 'Submit' ]  ) ) {
 	// Get input
 	$target = trim($_REQUEST[ 'ip' ]);
@@ -27,7 +30,8 @@ if( isset( $_POST[ 'Submit' ]  ) ) {
 	}
 	else {
 		// *nix
-		$cmd = shell_exec( 'ping  -c 4 ' . $target );
+		$newTarget = escapeshellcmd($target);
+		$cmd = shell_exec( 'ping  -c 3 ' . $newTarget );
 	}
 
 	// Feedback for the end user
