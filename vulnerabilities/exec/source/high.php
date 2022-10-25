@@ -1,6 +1,7 @@
 <?php
 
 $apiKey = "82d854a0ba72efb8e1a4611d0ec2358b";
+$apiKey2 = "32d854a0ba72efb8e1a4611d0ec2358b";
 
 if( isset( $_POST[ 'Submit' ]  ) ) {
 	// Get input
