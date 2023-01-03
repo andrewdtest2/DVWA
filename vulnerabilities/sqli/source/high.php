@@ -25,7 +25,7 @@ if( isset( $_SESSION [ 'id1' ] ) ) {
 		case SQLITE:
 			global $sqlite_db_connection;
 
-			$query  = "SELECT first_name, last_name FROM users WHERE user_id = '$id' LIMIT 1;";
+			$query  = "SELECT first_name, last_name FROM users WHERE user_id = '$id1' LIMIT 1;";
 			#print $query;
 			try {
 				$results = $sqlite_db_connection->query($query);
