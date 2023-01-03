@@ -1,13 +1,13 @@
 <?php
 
-if( isset( $_SESSION [ 'id' ] ) ) {
+if( isset( $_SESSION [ 'id1' ] ) ) {
 	// Get input
-	$id = $_SESSION[ 'id' ];
+	$id1 = $_SESSION[ 'id1' ];
 
 	switch ($_DVWA['SQLI_DB']) {
 		case MYSQL:
 			// Check database
-			$query  = "SELECT first_name, last_name FROM users WHERE user_id = '$id' LIMIT 1;";
+			$query  = "SELECT first_name, last_name FROM users WHERE user_id1 = '$id1' LIMIT 1;";
 			$result = mysqli_query($GLOBALS["___mysqli_ston"], $query ) or die( '<pre>Something went wrong.</pre>' );
 
 			// Get results
@@ -25,7 +25,7 @@ if( isset( $_SESSION [ 'id' ] ) ) {
 		case SQLITE:
 			global $sqlite_db_connection;
 
-			$query  = "SELECT first_name, last_name FROM users WHERE user_id = '$id' LIMIT 1;";
+			$query  = "SELECT first_name, last_name FROM users WHERE user_id = '$id1' LIMIT 1;";
 			#print $query;
 			try {
 				$results = $sqlite_db_connection->query($query);
