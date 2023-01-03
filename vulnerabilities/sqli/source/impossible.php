@@ -5,7 +5,7 @@ if( isset( $_GET[ 'Submit' ] ) ) {
 	checkToken( $_REQUEST[ 'user_token' ], $_SESSION[ 'session_token' ], 'index.php' );
 
 	// Get input
-	$id = $_GET[ 'id' ];
+	$id1 = $_GET[ 'id1' ];
 
 	// Was a number entered?
 	if(is_numeric( $id )) {
@@ -14,7 +14,7 @@ if( isset( $_GET[ 'Submit' ] ) ) {
 			case MYSQL:
 				// Check the database
 				$data = $db->prepare( 'SELECT first_name, last_name FROM users WHERE user_id = (:id) LIMIT 1;' );
-				$data->bindParam( ':id', $id, PDO::PARAM_INT );
+				$data->bindParam( ':id', $id1, PDO::PARAM_INT );
 				$data->execute();
 				$row = $data->fetch();
 
